@@ -6,6 +6,11 @@
 # dependencies
 /node_modules
 
+# test
+playwright-report/
+test-results/
+
+
 # IDEs and editors
 /.idea
 .project
