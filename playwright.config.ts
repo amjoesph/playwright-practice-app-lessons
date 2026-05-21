@@ -16,7 +16,8 @@ export default defineConfig<TestOptions>({
     ['json', {outputFile: 'test-results/jsonReport.json'}],
     ['junit', {outputFile: 'test-results/junitReport.xml'}],
     // ['allure-playwright'],
-    ['html']
+    ['html'],
+    ['github']
   ],
 
   use: {

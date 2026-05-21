@@ -1,0 +1,26 @@
+name: playwright tests
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm install
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
+      - name: Run playwright tests
+        run: npm run pageObjects-all
+      - name: Upload playwright report
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report/
+    
